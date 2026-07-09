@@ -17,7 +17,7 @@
 
   // Nav items: [href, label, pageKey]
   var NAV = [
-    ['index.html', 'Home', 'home'],
+    ['./', 'Home', 'home'],
     ['call-for-papers.html', 'Call for Papers', 'cfp'],
     ['important-dates.html', 'Dates', 'dates'],
     ['committee.html', 'Committee', 'committee'],
@@ -50,7 +50,7 @@
 
   var header =
     '<header class="site-header"><div class="container inner">' +
-      '<a class="lockup" href="index.html">' + LOGO_SVG +
+      '<a class="lockup" href="./">' + LOGO_SVG +
         '<span><span class="wm1">NEP<em>CON</em> 2026</span>' +
         '<span class="wm2">IEEE Nepal Section</span></span></a>' +
       '<span class="cobrand" title="Technically co-sponsored by IEEE">' + ieeeLogo(false) + '</span>' +
