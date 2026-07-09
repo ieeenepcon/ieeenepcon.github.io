@@ -1,0 +1,14 @@
+<!doctype html><html><body><pre id="out">running...</pre>
+<script>
+var fd=new FormData();
+fd.append('access_key','41ddeaf1-fa79-4c75-9c18-2896bfb5bbfc');
+fd.append('subject','NEPCON contact form — live-origin test');
+fd.append('from_name','NEPCON Website');
+fd.append('name','Live Origin Test');
+fd.append('email','nepconsupport@gmail.com');
+fd.append('topic','Form activation');
+fd.append('message','Automated live-origin test from ieeenepcon.github.io confirming the NEPCON 2026 contact form delivers. Safe to ignore.');
+fetch('https://api.web3forms.com/submit',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+.then(function(r){return r.json();}).then(function(j){document.getElementById('out').textContent='success='+j.success+' | message='+j.message;})
+.catch(function(e){document.getElementById('out').textContent='ERROR '+e;});
+</script></body></html>
