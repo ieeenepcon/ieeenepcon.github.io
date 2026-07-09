@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Call for Papers Poster — 2026 IEEE NEPCON</title>
+<!--
+  A4 PORTRAIT CFP POSTER (self-contained, animated on screen, clean in print).
+  • View: open in a browser (aurora header + live countdown animate on screen).
+  • Export: Ctrl/Cmd+P → "Save as PDF" → paper size A4, margins None (animations strip for print).
+  • QR: drop a submission QR image at assets/qr.png.
+  • IEEE logo: drop official artwork at assets/ieee-logo.png (do NOT redraw the IEEE kite).
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{ --ieee:#00629B; --ieee-dark:#002855; --accent:#BA0C2F; --navy:#0A1A2E; --snow:#F5F8FB; --slate:#5B6B7B; --line:#e4ebf1; }
+  body{ font-family:'Open Sans',system-ui,sans-serif; background:#3c4653; color:var(--navy); padding:24px; -webkit-font-smoothing:antialiased; }
+
+  .hint{ max-width:794px; margin:0 auto 16px; background:#fff; border-radius:10px; padding:12px 16px; font-size:13px; color:var(--slate); text-align:center; }
+  .hint b{ color:var(--ieee); }
+
+  .page{ width:794px; min-height:1123px; margin:0 auto; background:#fff; position:relative;
+    box-shadow:0 24px 70px rgba(0,0,0,.4);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  /* ---------- Header ---------- */
+  .head{ position:relative; color:#fff; padding:26px 44px 30px; overflow:hidden; flex-shrink:0;
+    background:linear-gradient(125deg,#001523 0%,#002855 40%,#00629B 78%,#0a4f7a 100%);
+    background-size:220% 220%; animation:aurora 14s ease infinite; }
+  @keyframes aurora{ 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  /* contour-ring + crimson-glow texture */
+  .head::before{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(130% 90% at 88% -8%, rgba(186,12,47,.34), transparent 52%),
+      repeating-radial-gradient(circle at 92% 6%, rgba(255,255,255,.055) 0 1px, transparent 1px 24px),
+      radial-gradient(rgba(255,255,255,.05) 1px, transparent 1.4px);
+    background-size:auto, auto, 24px 24px; }
+  .head::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:5px; z-index:4;
+    background:linear-gradient(90deg,var(--accent),#7fd4ff); }
+  .head > *{ position:relative; z-index:3; }
+
+  .brandrow{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .lockup{ display:inline-flex; align-items:center; gap:12px; }
+  .lockup .wm1{ font-weight:800; font-size:20px; line-height:1; }
+  .lockup .wm1 em{ font-style:normal; color:#7fd4ff; }
+  .lockup .wm2{ display:block; font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#a9c9dd; margin-top:5px; }
+  .kicker{ font-size:11.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#7fd4ff; text-align:right; }
+
+  .tagline{ margin-top:14px; display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+    letter-spacing:.08em; text-transform:uppercase; color:#dff1ff; }
+  .tagline .sep{ color:var(--accent); }
+  .cfp{ margin-top:6px; font-size:56px; font-weight:800; letter-spacing:-.015em; line-height:.94; text-shadow:0 6px 30px rgba(0,0,0,.25); }
+  .cfp em{ font-style:normal; color:#7fd4ff; }
+  .conf{ margin-top:8px; font-size:20px; font-weight:800; color:#eaf5fd; }
+  .conf span{ color:#7fd4ff; }
+  .meta{ display:flex; flex-wrap:wrap; gap:9px; margin-top:13px; }
+  .meta .pill{ background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:999px;
+    padding:7px 14px; font-size:13.5px; font-weight:600; backdrop-filter:blur(3px); }
+  .meta .pill b{ color:#fff; }
+
+  .deadline{ display:inline-flex; align-items:center; gap:10px; margin-top:12px; padding:8px 15px; border-radius:999px;
+    background:linear-gradient(90deg,var(--accent),#8f0a24); font-size:13.5px; font-weight:700; box-shadow:0 8px 22px rgba(186,12,47,.4); }
+  .deadline .dot{ width:9px; height:9px; border-radius:50%; background:#fff; animation:pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,255,255,.7) } 70%{ box-shadow:0 0 0 7px rgba(255,255,255,0) } }
+  .deadline b{ font-weight:800; }
+  .cd-live{ font-weight:800; color:#ffe1e7; }
+
+  /* ---------- Stats band ---------- */
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); background:var(--snow); border-bottom:1px solid var(--line); flex-shrink:0; }
+  .stats .s{ padding:9px 8px; text-align:center; border-left:1px solid var(--line); }
+  .stats .s:first-child{ border-left:0; }
+  .stats .n{ font-size:22px; font-weight:800; color:var(--ieee); line-height:1; }
+  .stats .l{ font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--slate); margin-top:5px; }
+
+  /* ---------- Body ---------- */
+  .body{ padding:8px 44px 0; }
+  .scope{ font-size:14px; line-height:1.5; color:#33465a; }
+  .scope b{ color:var(--navy); }
+  .sect{ margin-top:8px; }
+  .eyebrow{ color:var(--accent); font-weight:800; letter-spacing:.1em; text-transform:uppercase; font-size:12px; }
+  h2{ font-size:16px; font-weight:800; margin-top:4px; }
+
+  .tracks{ display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+  .track{ display:flex; align-items:center; gap:11px; background:#fff; border:1px solid var(--line);
+    border-radius:12px; padding:6px 12px; transition:transform .15s, box-shadow .15s, border-color .15s; }
+  .track:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(10,26,46,.1); border-color:#cfe1ef; }
+  .track .ico{ width:34px; height:34px; border-radius:9px; color:#fff; background:linear-gradient(135deg,var(--ieee),#0a4f7a);
+    display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+  .track b{ font-size:13.5px; font-weight:700; }
+
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:8px; align-items:start; }
+  .dates{ list-style:none; }
+  .dates li{ display:flex; justify-content:space-between; gap:12px; padding:4px 0; border-top:1px dashed #dbe4ec; font-size:13.5px; }
+  .dates li:first-child{ border-top:0; }
+  .dates .d{ color:var(--ieee); font-weight:800; white-space:nowrap; }
+  .dates li.hi .n{ color:var(--accent); font-weight:800; }
+  .dates li.hi .d{ color:var(--accent); }
+  .dates li.hi{ background:linear-gradient(90deg,rgba(186,12,47,.06),transparent); border-radius:8px; padding-left:8px; margin-left:-8px; }
+
+  .submit{ background:linear-gradient(135deg,var(--ieee-dark),#013d61); color:#fff; border-radius:16px; padding:13px; display:flex; align-items:center; gap:14px;
+    box-shadow:0 14px 30px rgba(0,40,85,.28); }
+  .qr{ width:94px; height:94px; border-radius:12px; background:#fff; flex-shrink:0; display:flex; align-items:center; justify-content:center; overflow:hidden; padding:5px; }
+  .qr img{ width:100%; height:100%; object-fit:contain; }
+  .qr-ph{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:var(--slate); font-weight:800; font-size:22px; }
+  .qr-ph small{ font-size:9px; font-weight:600; margin-top:4px; color:#93a3b2; }
+  .submit .s1{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:#7fd4ff; font-weight:700; }
+  .submit .s2{ font-size:19px; font-weight:800; margin-top:3px; }
+  .submit .s3{ font-size:12px; color:#cfe4f3; margin-top:8px; word-break:break-all;
+    background:rgba(255,255,255,.1); border-radius:7px; padding:6px 9px; display:inline-block; }
+  .submit .s4{ font-size:11.5px; color:#dff1ff; font-weight:600; margin-top:7px; }
+
+  /* ---------- Footer ---------- */
+  .footnote{ padding:8px 44px 0; font-size:10.5px; line-height:1.45; color:var(--slate); text-align:center; }
+  .foot{ margin-top:4px; border-top:1px solid var(--line); padding:9px 44px 12px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .foot .site span{ display:block; font-size:12px; color:var(--slate); margin-top:3px; }
+  .foot .site .rec{ display:inline-block; background:var(--ieee-light); border:1px solid #cfe1ef; color:var(--ieee);
+    font-weight:800; font-size:11px; padding:4px 11px; border-radius:999px; margin-bottom:7px; }
+  .foot .site .rec:hover{ text-decoration:none; }
+  .cosponsor{ display:flex; align-items:center; gap:12px; }
+  .cosponsor .cap{ font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); }
+  .logo-frame{ min-width:120px; height:50px; padding:8px 14px; background:#fff; border:1px solid var(--line);
+    border-radius:10px; display:flex; align-items:center; justify-content:center; }
+  .logo-frame img{ max-height:34px; }
+  .logo-text{ text-align:center; line-height:1; }
+  .logo-text .l1{ font-weight:800; font-size:20px; letter-spacing:.06em; color:var(--ieee); }
+  .logo-text .l2{ font-size:9px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--slate); margin-top:4px; }
+  .cosponsor .sec-name{ font-weight:800; color:var(--ieee); font-size:13px; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
+  .foot .site{ text-align:right; font-size:12.5px; color:var(--slate); line-height:1.5; }
+  .foot .site b{ color:var(--ieee); font-size:15px; }
+
+  /* Content is always fully visible (no fade-in) so exports/screenshots never
+     capture a half-animated, blank state. */
+  .anim{ animation:none; opacity:1; }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    body{ background:#fff; padding:0; }
+    .hint{ display:none; }
+    .page{ box-shadow:none; width:100%; min-height:0; }
+    *{ animation:none !important; }
+    .head{ background:linear-gradient(125deg,#001523,#002855 45%,#00629B); }
+    .cd-live{ display:none; }
+    .track:hover{ transform:none; box-shadow:none; }
+  }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; } }
+</style>
+</head>
+<body>
+  <div class="hint">🖨️ <b>To export:</b> press <b>Ctrl/Cmd + P</b> → Destination <b>Save as PDF</b> → Paper size <b>A4</b>, Margins <b>None</b>. (Animations &amp; this tip are screen-only.)</div>
+
+  <div class="page">
+    <!-- HEADER -->
+    <div class="head">
+      <div class="brandrow anim" style="animation-delay:.02s">
+        <div class="lockup">
+          <svg width="46" height="46" viewBox="0 0 48 48" aria-hidden="true">
+            <rect width="48" height="48" rx="11" fill="#00629B"/>
+            <circle cx="31" cy="15" r="4" fill="#BA0C2F"/>
+            <path d="M4 38 L15 18 L22 28 L30 12 L37 24 L44 16 L44 38 Z" fill="#ffffff" opacity=".95"/>
+            <path d="M4 38 L44 38" stroke="#7fd4ff" stroke-width="2"/>
+          </svg>
+          <span><span class="wm1">NEP<em>CON</em> 2026</span><span class="wm2">IEEE Nepal Section</span></span>
+        </div>
+        <div class="kicker">International Signature<br>Conference</div>
+      </div>
+
+      <div class="tagline anim" style="animation-delay:.12s">Publish <span class="sep">·</span> Present <span class="sep">·</span> Connect — in the heart of the Himalayas</div>
+      <div class="cfp anim" style="animation-delay:.18s">CALL FOR<br><em>PAPERS</em></div>
+      <div class="conf anim" style="animation-delay:.26s">2026 IEEE <span>NEPCON</span></div>
+      <div class="meta anim" style="animation-delay:.34s">
+        <span class="pill">🗓️ <b>December 11–13, 2026</b></span>
+        <span class="pill">📍 <b>Kathmandu, Nepal</b></span>
+        <span class="pill">📚 <b>Intended for IEEE Xplore</b></span>
+      </div>
+      <div class="deadline anim" style="animation-delay:.42s">
+        <span class="dot"></span>Submission closes <b>15 August 2026</b>
+      </div>
+    </div>
+
+    <!-- STATS BAND -->
+    <div class="stats">
+      <div class="s"><div class="n">8</div><div class="l">Tracks</div></div>
+      <div class="s"><div class="n">3</div><div class="l">Days</div></div>
+      <div class="s"><div class="n">KTM</div><div class="l">Kathmandu</div></div>
+      <div class="s"><div class="n">Xplore</div><div class="l">Indexing*</div></div>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+      <p class="scope">The <b>2026 IEEE NEPCON</b> — the international signature conference of the IEEE Nepal
+      Section — invites <b>original, unpublished research</b> in computing, communication, and intelligent
+      sensing. Papers must not be under review or accepted elsewhere.</p>
+
+      <div class="sect">
+        <span class="eyebrow">Topic Areas</span>
+        <h2>Eight tracks — from core computing to responsible AI</h2>
+        <div class="tracks">
+          <div class="track"><span class="ico">🖥️</span><b>Core Computing</b></div>
+          <div class="track"><span class="ico">🔐</span><b>Networking &amp; Security</b></div>
+          <div class="track"><span class="ico">🤖</span><b>Artificial Intelligence &amp; Data</b></div>
+          <div class="track"><span class="ico">☁️</span><b>Cloud, Distributed &amp; HPC</b></div>
+          <div class="track"><span class="ico">⚛️</span><b>Emerging Technologies</b></div>
+          <div class="track"><span class="ico">🕹️</span><b>Human-Centric &amp; Applied Computing</b></div>
+          <div class="track"><span class="ico">🦾</span><b>Robotics &amp; Intelligent Systems</b></div>
+          <div class="track"><span class="ico">⚖️</span><b>Societal &amp; Ethical Aspects</b></div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div>
+          <span class="eyebrow">Important Dates</span>
+          <h2>Deadlines</h2>
+          <ul class="dates">
+            <li class="hi"><span class="n">Paper Submission</span><span class="d">15 Aug 2026</span></li>
+            <li><span class="n">Acceptance Notification</span><span class="d">15 Sep 2026</span></li>
+            <li><span class="n">Camera-Ready</span><span class="d">15 Oct 2026</span></li>
+            <li><span class="n">Author Registration</span><span class="d">20 Oct 2026</span></li>
+            <li><span class="n">Conference</span><span class="d">11–13 Dec 2026</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">Submit</span>
+          <h2>Via ConfConnects</h2>
+          <div class="submit">
+            <div class="qr">
+              <img src="assets/qr.png" alt="Scan to submit"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="qr-ph" style="display:none">QR<small>add assets/qr.png</small></div>
+            </div>
+            <div>
+              <div class="s1">Scan to submit</div>
+              <div class="s2">Submit your paper →</div>
+              <div class="s3">app.confconnects.com/conference/m8BpmCrWuCTHCgJbGHs0</div>
+              <div class="s4">✉ Questions? nepconsupport@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footnote">*Accepted, registered &amp; presented papers are intended for IEEE Xplore, subject to the publisher's approval. Papers must follow the official IEEE conference template.</div>
+    <div class="foot">
+      <div class="cosponsor">
+        <span class="cap">Technically<br>co-sponsored by</span>
+        <div class="logo-frame">
+          <img src="assets/ieee-logo.svg" alt="IEEE Nepal Section"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="logo-text" style="display:none"><span class="l1">IEEE</span></span>
+        </div>
+        <span class="sec-name">Nepal Section</span>
+      </div>
+      <div class="site">
+        <a class="rec" href="https://conferences.ieee.org/conferences_events/conferences/conferencedetails/71018" target="_blank" rel="noopener">IEEE Conference Record #71018</a>
+        <b>ieee-nepcon.org</b><span>Kathmandu, Nepal · Dec 11–13, 2026</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
