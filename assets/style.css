@@ -263,6 +263,22 @@ h2.st{ font-size:clamp(24px,4vw,34px); margin:8px 0 16px; }
 .skip:focus{ left:0; }
 a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible{ outline:3px solid #7fb2d6; outline-offset:2px; border-radius:6px; }
 
+/* Contact form */
+.cform{ max-width:720px; margin-top:20px; }
+.cform label{ display:block; font-weight:600; font-size:14px; color:var(--navy); margin-top:16px; }
+.cform .req{ color:var(--accent); }
+.cform input, .cform textarea{ width:100%; margin-top:6px; padding:12px 14px; border:1px solid #d5dfe8; border-radius:10px;
+  font:inherit; font-size:15px; background:#fff; color:var(--navy); }
+.cform textarea{ resize:vertical; }
+.cform input:focus, .cform textarea:focus{ outline:none; border-color:var(--ieee); box-shadow:0 0 0 3px rgba(0,98,155,.12); }
+.cform .frow{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:600px){ .cform .frow{ grid-template-columns:1fr; } }
+.cform button{ margin-top:20px; border:0; cursor:pointer; }
+.cform .hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+.form-status{ margin-top:14px; font-size:14.5px; font-weight:600; min-height:1.2em; }
+.form-status.ok{ color:#00843D; }
+.form-status.err{ color:var(--accent); }
+
 /* Submission-deadline banner (injected above the header) */
 .deadline-bar{ position:relative; background:linear-gradient(90deg,var(--accent),#8f0a24); color:#fff;
   font-size:13.5px; text-align:center; padding:9px 42px 9px 16px; }

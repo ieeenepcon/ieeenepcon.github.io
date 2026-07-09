@@ -49,8 +49,70 @@
         </div>
       </div>
     </section>
+
+    <section class="section section--snow">
+      <div class="container">
+        <span class="eyebrow">Message us</span>
+        <h2 class="st">Send us a message</h2>
+        <p class="lead">Have a question about submissions, registration, or the program? Fill in the form and the organizing committee will get back to you by email.</p>
+
+        <!-- Contact form → Web3Forms (free). To activate: create a free access key at
+             https://web3forms.com using nepconsupport@gmail.com, then paste it into
+             the access_key value below. Submissions arrive in that inbox. -->
+        <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New enquiry from the NEPCON 2026 website" />
+          <input type="hidden" name="from_name" value="NEPCON 2026 Website" />
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="frow">
+            <label>Name <span class="req">*</span>
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>Your email <span class="req">*</span>
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+          </div>
+          <label>Topic
+            <input type="text" name="topic" placeholder="e.g. Registration, Paper submission, Visa letter" />
+          </label>
+          <label>Message <span class="req">*</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary">Send message</button>
+          <p class="form-status" id="fstatus" role="status" aria-live="polite"></p>
+        </form>
+        <p class="note" style="margin-top:12px;">Prefer email? Use the address in the card above (shown as an image to reduce spam).</p>
+      </div>
+    </section>
   </main>
 
   <script src="assets/site.js"></script>
+  <script>
+    (function () {
+      var f = document.getElementById('cform'); if (!f) return;
+      var s = document.getElementById('fstatus');
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        s.className = 'form-status'; s.textContent = 'Sending…';
+        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (j.success) {
+              f.reset();
+              s.className = 'form-status ok';
+              s.textContent = '✓ Thank you! Your message has been sent — we will reply by email.';
+            } else {
+              s.className = 'form-status err';
+              s.textContent = 'Sorry, the message could not be sent' + (j.message ? ': ' + j.message : '') + '. Please email us instead.';
+            }
+          })
+          .catch(function () {
+            s.className = 'form-status err';
+            s.textContent = 'Network error — please email us instead.';
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
