@@ -63,6 +63,8 @@
           <input type="hidden" name="access_key" value="41ddeaf1-fa79-4c75-9c18-2896bfb5bbfc" />
           <input type="hidden" name="subject" value="New enquiry from the NEPCON 2026 website" />
           <input type="hidden" name="from_name" value="NEPCON 2026 Website" />
+          <!-- replyto is filled with the sender's email on submit, so "Reply" goes to them -->
+          <input type="hidden" name="replyto" />
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
           <div class="frow">
@@ -95,6 +97,8 @@
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         s.className = 'form-status'; s.textContent = 'Sending…';
+        var em = f.querySelector('[name="email"]'), rt = f.querySelector('[name="replyto"]');
+        if (em && rt) rt.value = em.value; // Reply-To = the sender's address
         fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
           .then(function (r) { return r.json(); })
           .then(function (j) {
