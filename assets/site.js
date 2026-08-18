@@ -125,7 +125,7 @@
 
   /* ---------- Submission-deadline banner ---------- */
   (function () {
-    var DEADLINE = new Date('2026-08-15T23:59:59+05:45').getTime();
+    var DEADLINE = new Date('2026-09-15T23:59:59+05:45').getTime();
     var left = DEADLINE - Date.now();
     if (left <= 0) return;
     var hidden; try { hidden = sessionStorage.getItem('nepcon-deadline-hidden'); } catch (e) {}
@@ -134,7 +134,7 @@
     var msg = days <= 1 ? 'Final day to submit' : days + ' days left to submit';
     var bar = document.createElement('div');
     bar.className = 'deadline-bar';
-    bar.innerHTML = '⏳ <b>' + msg + '</b> — paper submission closes 15 August 2026. ' +
+    bar.innerHTML = '⏳ <b>' + msg + '</b> — paper submission closes 15 September 2026. ' +
       '<a href="' + SUBMIT + '" target="_blank" rel="noopener">Submit via ConfConnects →</a>' +
       '<button class="x" aria-label="Dismiss">×</button>';
     document.body.insertAdjacentElement('afterbegin', bar);

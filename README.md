@@ -43,8 +43,8 @@ Shared chrome (header, nav, footer, countdown, timeline) lives in
 
 ## Real data already filled in
 - **Submission:** ConfConnects — `app.confconnects.com/conference/m8BpmCrWuCTHCgJbGHs0`
-- **Dates:** submission 15 Jul · notification 15 Sep · camera-ready 15 Oct ·
-  registration 20 Oct · conference 11–13 Dec 2026
+- **Dates:** submission 15 Sep · notification 15 Oct · camera-ready 15 Nov ·
+  registration 20 Nov · conference 11–13 Dec 2026
 - **Fees:** IEEE 125 / late 150 · Non-IEEE 150 / late 200 (USD; indicative NPR)
 - **Committee:** real chairs + 26 TPC members
 - **Tracks:** 8 official topic areas
